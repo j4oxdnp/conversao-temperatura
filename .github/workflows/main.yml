@@ -27,8 +27,8 @@ jobs:
           file: ./src/Dockerfile
           push: true
           tags: |
-            j4oxdnp/rotten-potatoes:latest
-            j4oxdnp/rotten-potatoes:${{ github.run_number }}
+            j4oxdnp/conversao-temperatura:latest
+            j4oxdnp/conversao-temperatura:${{ github.run_number }}
             
   CD:
     needs: [CI]
@@ -48,4 +48,4 @@ jobs:
         with:
           images: j4oxdnp/conversao-temperatura:${{ github.run_number }}
           manifests: |
-            k8s/deployment.yaml
+            deployment.yaml
